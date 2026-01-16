@@ -1,0 +1,228 @@
+/* Shared styles for all pages */ 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Unique styles for index.html */
+.index-page {
+    background-color: #e6f3ff;
+}
+
+.index-page h1 {
+    font-size: 2.8rem;
+    color: #0066cc;
+    font-weight: 700;
+    text-align: center;
+}
+
+.index-page h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.index-page .content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Unique styles for movies.html */
+.movies-page {
+    background-color: #fff5e6;
+}
+
+.movies-page h1 {
+    font-size: 2.5rem;
+    color: #cc6600;
+    font-weight: 700;
+    text-align: left;
+}
+
+.movies-page h2, .movies-page h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.movies-page .movie {
+    border: 2px solid #cc6600;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.movies-page .movie p {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.movies-page .video-container {
+    position: relative;
+    padding-bottom: 100%; /* 1:1 aspect ratio for square */
+    max-width: 700px; /* Fits within 768px height */
+    margin: 0 auto;
+    overflow: visible; /* Ensure iframe is not clipped */
+}
+
+.movies-page .video-container iframe {
+    width: 100%;
+    height: 100%;
+    /* Attempt to force cover, though iframe may not support object-fit directly */
+    object-fit: cover; /* Fallback, may not work with iframe */
+}
+
+/* Unique styles for resume.html */
+.resume-page {
+    background-color: #e6ffe6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.resume-page h1 {
+    font-size: 2.2rem;
+    color: #009900;
+    font-weight: 700;
+    text-align: center;
+}
+
+.resume-page h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.resume-page p, .resume-page li {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.resume-page section {
+    border-left: 4px solid #009900;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Media query for small screens (mobile) */
+@media screen and (max-width: 600px) {
+    nav ul li {
+        margin: 0 0.8rem;
+    }
+    nav ul li a {
+        font-size: 1rem;
+    }
+    .container {
+        padding: 1rem;
+    }
+    .index-page h1 {
+        font-size: 2.2rem;
+    }
+    .index-page .content {
+        font-size: 1rem;
+    }
+    .movies-page h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .movies-page .movie {
+        padding: 0.8rem;
+        border-width: 1px;
+    }
+    .movies-page .movie p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    .movies-page .video-container {
+        max-width: 90%;
+        margin: 0 auto;
+        padding-bottom: 100%; /* 1:1 aspect ratio for square */
+    }
+    .movies-page h2, .movies-page h3 {
+        font-size: 1.4rem;
+    }
+    .resume-page h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Media query for tablets (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    .movies-page h1 {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+    .movies-page .movie {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-width: 3px;
+    }
+    .movies-page .movie p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+    .movies-page .video-container {
+        max-width: 700px; /* Fits within 768px height */
+        margin: 0 auto;
+        padding-bottom: 100%; /* 1:1 aspect ratio for square */
+    }
+    .movies-page h2, .movies-page h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Media query for larger tablets/small desktops (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    .movies-page .container {
+        padding: 3rem;
+        max-width: 1400px;
+        /* Grid commented out for testing */
+        /* display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem; */
+    }
+    .movies-page h1 {
+        font-size: 3rem;
+        letter-spacing: 1px;
+        /*
